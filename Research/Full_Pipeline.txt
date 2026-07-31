@@ -1,0 +1,41 @@
+The Full Pipeline, Step by Step
+Phase 1: You are here — Data Collection ✅ (mostly done)
+
+24 raw images downloaded. Next small cleanup: verify none of the 24 tasks failed (per my last message).
+
+Phase 2: Create "Ground Truth" Labels (the hardest, most time-consuming part)
+
+This is where you teach the AI what water actually looks like, by hand.
+
+For a subset of your images (your reference doc caps this at 300-500 small patches, not all 24 full images), you'll manually trace the water boundary in QGIS.
+Practically: you don't label the whole big image at once — you cut each image into smaller patches (e.g., 256×256 pixel tiles), and manually draw/correct a water-vs-land mask on each patch.
+You'll use NDWI/MNDWI (computed from your NIR/SWIR bands) as a first-pass automatic guess, then manually fix mistakes in QGIS — especially algae patches in Hussain Sagar, which the auto-index gets wrong.
+Output of this phase: pairs of (image patch, correct water/land mask) — this is your training data.
+
+Phase 3: Train the U-Net Model
+Feed your labeled patches into a U-Net (Python, PyTorch, using the segmentation-models-pytorch library with a pretrained ResNet34 encoder — per your tech stack).
+The model learns: "given these 5 bands of pixel data, predict water vs. land for every pixel."
+You'll split your labeled patches into training/validation sets, train for some epochs, and check accuracy.
+
+Phase 4: Run the Trained Model on All 24 Images
+Once trained, the model doesn't need manual labels anymore — it automatically predicts a water/land mask for every one of your 24 full images (including any images you didn't manually label).
+Output: 24 predicted masks — one per lake per year.
+
+Phase 5: Convert Masks → Surface Area Numbers
+For each predicted mask, count the water pixels and multiply by pixel area (10m × 10m = 100 m² per pixel) to get total surface area in km².
+Now you have a simple table: Lake × Year × Surface Area (km²).
+
+Phase 6: Analyze & Report the Trend
+Plot surface area over time for each lake (line graphs).
+Quantify shrinkage: e.g., "Hussain Sagar went from X km² in 2018 to Y km² in 2025, a Z% reduction."
+This is your core deliverable — the guaranteed, defensible project, per Section 5 of your reference doc.
+
+Phase 7 (Optional, only if time remains, in priority order)
+FTL boundary comparison (if you can find that data) → reframe as "encroachment," not just "shrinkage."
+Grad-CAM → visualize what the model is looking at.
+Transformer vs. U-Net comparison.
+Shoreline classification (lowest priority).
+
+Phase 8: Write the Report
+
+Compile everything — literature review (your 9-10 papers), methodology, results, discussion — into your final paper/thesis.

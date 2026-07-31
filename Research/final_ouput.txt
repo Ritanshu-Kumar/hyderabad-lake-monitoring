@@ -1,0 +1,61 @@
+Your actual final outputs should look like this
+1. Original satellite image
+
+For example, Hussain Sagar (2025).
+
+↓
+
+2. Predicted water mask (U-Net output)
+
+A black-and-white (or colored) segmentation image showing:
+
+Water
+Non-water
+
+↓
+
+3. Overlay image
+
+The predicted lake boundary overlaid on the original Sentinel-2 image.
+
+↓
+
+4. Calculated lake area
+Lake	Year	Area (km²)
+Hussain Sagar	2018	4.95
+Hussain Sagar	2019	4.90
+...	...	...
+Hussain Sagar	2025	4.42
+
+(Sample values shown for illustration.)
+
+↓
+
+5. Trend graphs
+
+For example:
+
+Lake Area (km²)
+
+5.0 ┤●
+4.9 ┤ ●
+4.8 ┤  ●
+4.7 ┤    ●
+4.6 ┤      ●
+4.5 ┤         ●
+4.4 ┤           ●
+     2018 ... 2025
+
+One graph for each lake, or a combined comparison chart.
+
+↓
+
+6. Analysis
+
+For example:
+
+Hussain Sagar showed a gradual decrease in surface area over the study period.
+Osman Sagar remained relatively stable.
+Himayat Sagar exhibited seasonal fluctuations with an overall decline.
+
+(Your actual conclusions will depend on your results.)

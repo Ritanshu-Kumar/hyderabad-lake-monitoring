@@ -1,0 +1,27 @@
+# Raw satellite imagery and derived masks (too large for GitHub)
+Data/0 Raw_Images/
+Data/1 ndwi_masks/
+Data/2 Labeled_patches/
+
+# Keep folder structure visible but ignore contents (optional alternative)
+# Data/0 Raw_Images/*
+# Data/1 ndwi_masks/*
+# Data/2 Labeled_patches/*
+# !Data/0 Raw_Images/.gitkeep
+# !Data/1 ndwi_masks/.gitkeep
+# !Data/2 Labeled_patches/.gitkeep
+
+# QGIS temp/lock files
+*.qgz~
+*.qgz.lock
+
+# Python (for later, once you start U-Net work)
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.env
+
+# OS junk files
+.DS_Store
+Thumbs.db
