@@ -2,6 +2,8 @@
 Data/0 Raw_Images/
 Data/1 ndwi_masks/
 Data/2 Labeled_patches/
+Data/3 mndwi_masks/
+Data/4 mndwi_Labeled_patches/
 
 # Keep folder structure visible but ignore contents (optional alternative)
 # Data/0 Raw_Images/*
@@ -25,3 +27,6 @@ venv/
 # OS junk files
 .DS_Store
 Thumbs.db
+
+# Trained model weights (large binary, regenerate via train_unet.py)
+*.pth
