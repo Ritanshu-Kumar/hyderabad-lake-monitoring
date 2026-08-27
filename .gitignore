@@ -30,3 +30,12 @@ Thumbs.db
 
 # Trained model weights (large binary, regenerate via train_unet.py)
 *.pth
+
+Code/*.png
+
+# Generated model/result rasters
+Results/**/*.tif
+Results/**/*.tiff
+
+# Generated auxiliary GIS files
+Results/**/*.aux.xml

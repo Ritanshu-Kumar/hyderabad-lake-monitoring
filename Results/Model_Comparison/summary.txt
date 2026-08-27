@@ -1,0 +1,30 @@
+CAPSTONE MODEL COMPARISON
+=========================
+
+Baseline:
+MNDWI pseudo-ground-truth U-Net
+
+Final model:
+Manual-GT U-Net V3
+
+Evaluation reference:
+2018 manually verified ground truth
+
+AVERAGE METRICS
+===============
+
+MNDWI_Baseline
+--------------
+IoU: 0.6707
+Dice_F1: 0.7882
+Precision: 0.9958
+Recall: 0.6727
+Pixel_Accuracy: 0.9271
+
+Manual_GT_V3
+------------
+IoU: 0.9784
+Dice_F1: 0.9891
+Precision: 0.9864
+Recall: 0.9918
+Pixel_Accuracy: 0.9948
