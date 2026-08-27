@@ -39,3 +39,15 @@ Results/**/*.tiff
 
 # Generated auxiliary GIS files
 Results/**/*.aux.xml
+
+# Experimental MNDWI recalculation
+Data/3 mndwi_masks_recalculated/
+
+# Temporary testing data
+Data/Testing/
+
+# GIS auxiliary sidecar files
+*.aux.xml
+
+# QGIS project backups
+*.qgz
