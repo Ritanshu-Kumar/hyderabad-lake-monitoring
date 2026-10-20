@@ -51,3 +51,6 @@ Data/Testing/
 
 # QGIS project backups
 *.qgz
+
+#OTD
+OTD/*
